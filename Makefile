@@ -62,6 +62,11 @@ build: clean check test
 	cat package/python-kiwi_boxed_plugin-spec-template |\
 		sed -e s'@%%VERSION@${version}@' \
 	> dist/python-kiwi_boxed_plugin.spec
+	# update package version in PKGBUILD file
+	md5sums=$$(md5sum dist/python-kiwi-boxed-plugin.tar.gz | cut -d" " -f1); \
+	cat package/python-kiwi_boxed_plugin-pkgbuild-template | sed \
+		-e s'@%%VERSION@${version}@' \
+		-e s"@%%MD5SUM@$${md5sums}@" > dist/PKGBUILD
 	# provide rpm rpmlintrc
 	cp package/python-kiwi_boxed_plugin-rpmlintrc dist
 
