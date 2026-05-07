@@ -15,7 +15,7 @@
         <profile name="Container" description="Provides system for podman"/>
     </profiles>
     <preferences>
-        <version>1.24.4</version>
+        <version>1.26.4</version>
         <packagemanager>apt</packagemanager>
         <locale>en_US</locale>
         <timezone>UTC</timezone>
@@ -44,16 +44,16 @@
         <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root" groups="root"/>
     </users>
     <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false" arch="x86_64">
-        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_24.04_x86_64"/>
+        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_26.04_x86_64"/>
     </repository>
     <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false" arch="aarch64">
-        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_24.04_aarch64"/>
+        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_26.04_aarch64"/>
     </repository>
-    <repository type="apt-deb" alias="Ubuntu-Noble-Universe" distribution="noble" components="main multiverse restricted universe" repository_gpgcheck="false">
-        <source path="obs://Ubuntu:24.04/universe"/>
+    <repository type="apt-deb" alias="Ubuntu-Resolute-Universe" distribution="resolute" components="main" repository_gpgcheck="false">
+        <source path="obs://Ubuntu:26.04/universe"/>
     </repository>
-    <repository type="apt-deb" alias="Ubuntu-Noble" distribution="noble" components="main multiverse restricted universe" repository_gpgcheck="false">
-        <source path="obs://Ubuntu:24.04/standard"/>
+    <repository type="apt-deb" alias="Ubuntu-Resolute" distribution="resolute" components="main" repository_gpgcheck="false">
+        <source path="obs://Ubuntu:26.04/standard"/>
     </repository>
     <packages type="image">
         <package name="libpam-runtime"/>
@@ -115,5 +115,8 @@
         <package name="openssh-server"/>
         <package name="sshfs"/>
     </packages>
-    <packages type="bootstrap"/>
+    <packages type="bootstrap">
+        <package name="ca-certificates"/>
+        <package name="coreutils"/>
+    </packages>
 </image>
