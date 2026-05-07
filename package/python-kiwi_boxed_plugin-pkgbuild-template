@@ -1,0 +1,30 @@
+# Maintainer: Marcus Schaefer <ms@suse.com>
+# Maintainer: David Cassany <dcassany@suse.com>
+
+pkgname=('python-kiwi_boxed_plugin')
+arch=(x86_64)
+pkgver=%%VERSION
+pkgrel=0
+pkgdesc="KIWI - Boxed Build Plugin"
+url="https://github.com/OSInside/kiwi-boxed-plugin/tarball/master"
+license=('GPL3')
+makedepends=(make gcc python-build python-docopt python-installer python-poetry-core python-requests python-sphinx python-sphinx_rtd_theme python-wheel python-yaml shadow grep)
+source=("python-kiwi-boxed-plugin.tar.gz")
+changelog="${pkgname}.changes"
+md5sums=('%%MD5SUM')
+
+build() {
+  export LANG=C.UTF-8
+  export LC_ALL=C.UTF-8
+  cd kiwi_boxed_plugin-${pkgver}
+  make -C doc man
+  python3 -m build --no-isolation --wheel
+}
+
+package_python-kiwi_boxed_plugin(){
+  depends=(python-kiwi python-docopt python-requests python-yaml python-progressbar python-cerberus qemu)
+  optdepends=('sshfs' 'virtiofsd')
+  cd kiwi_boxed_plugin-${pkgver}
+  python3 -m installer --destdir "${pkgdir}/" dist/*.whl
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE" 
+}
