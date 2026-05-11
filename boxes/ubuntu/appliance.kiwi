@@ -100,6 +100,7 @@
         <package name="python3-solv"/>
         <package name="locales-all"/>
         <package name="tzdata"/>
+        <package name="login"/>
         <archive name="box-key-unsafe.tgz"/>
     </packages>
     <packages type="image" profiles="Kernel,System">
