@@ -23,7 +23,7 @@
     </preferences>
     <preferences profiles="Container">
         <type image="docker">
-            <containerconfig name="ubuntu">
+            <containerconfig name="ubuntu" tag="24.04">
                 <entrypoint execute="/usr/lib/systemd/systemd"/>
             </containerconfig>
         </type>
