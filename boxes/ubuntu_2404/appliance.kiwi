@@ -3,7 +3,7 @@
 <!-- The line below is required in order to use the multibuild OBS features -->
 <!-- OBS-Profiles: @BUILD_FLAVOR@ -->
 
-<image schemaversion="7.4" name="Ubuntu-Box">
+<image schemaversion="7.4" name="Ubuntu-Box-2404">
     <description type="system">
         <author>Jürgen Löhel</author>
         <contact>juergen@loehel.de</contact>
