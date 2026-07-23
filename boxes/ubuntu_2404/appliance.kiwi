@@ -44,10 +44,10 @@
         <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root" groups="root"/>
     </users>
     <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false" arch="x86_64">
-        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_24.04_x86_64"/>
+        <source path="obs://home:jloehel:Appliances:Builder/xUbuntu_24.04_x86_64"/>
     </repository>
     <repository type="apt-deb" alias="kiwi-next-generation" priority="1" repository_gpgcheck="false" arch="aarch64">
-        <source path="obs://Virtualization:Appliances:Builder/xUbuntu_24.04_aarch64"/>
+        <source path="obs://home:jloehel:Appliances:Builder/xUbuntu_24.04_aarch64"/>
     </repository>
     <repository type="apt-deb" alias="Ubuntu-Resolute-Universe" distribution="resolute" components="main" repository_gpgcheck="false">
         <source path="obs://Ubuntu:24.04/universe"/>
